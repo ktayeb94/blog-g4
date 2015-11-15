@@ -5,3 +5,17 @@
 .header {
   background-color: lightgreen;
 }
+
+.article , .comments{
+  margin: 10px 20px;
+  padding: 10px 20px;
+  border: 1px solid lightgray;
+}
+
+.notice {
+  color: green;
+}
+
+.alert {
+  color: red;
+}
