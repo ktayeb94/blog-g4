@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_article
-  before_action :set_comment, only: [:destroy]
+  before_action :set_comment, only: [:report, :destroy]
 
 
   # POST /comments
@@ -19,6 +19,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def report
+     @comment.report_count += 1
+     @comment.save
+     redirect_to article_path(@article), notice: 'Thanks for reporting'
+  end
 
   # DELETE /comments/1
   # DELETE /comments/1.json

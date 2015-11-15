@@ -1,3 +1,9 @@
 
 <%= simple_format comment.text %>
-<%= link_to 'Destroy', article_comment_path(comment.article, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Destroy', article_comment_path(comment.article, comment), method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Report', report_article_comment_path(comment.article, comment), :method => :post %>
+<% if comment.report_count > 0%>
+  (Nb of reports : <%= comment.report_count %> )
+<% end %>
+
