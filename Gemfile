@@ -48,3 +48,5 @@ group :development do
   gem "better_errors"
 end
 
+gem 'mailjet'
+gem 'devise'
