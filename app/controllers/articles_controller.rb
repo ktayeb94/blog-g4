@@ -3,52 +3,52 @@ class ArticlesController < ApplicationController
   before_action :set_user
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  # GET /blog/:blog_name
+  # GET /blog/:username
   def index
     @articles = @user.articles
   end
 
-  # GET  /blog/:blog_name/:id
+  # GET  /blog/:username/:id
   def show
     @comments = @article.comments.order(:created_at => "asc")
     @comment = @article.comments.build
   end
 
-  # GET /blog/:blog_name/new
+  # GET /blog/:username/new
   def new
     @article = @user.articles.build
   end
 
-  # GET /blog/:blog_name/:id/edit
+  # GET /blog/:username/:id/edit
   def edit
   end
 
-  # POST /blog/:blog_name
+  # POST /blog/:username
   def create
     @article = @user.articles.build(article_params)
 
 
     if @article.save
-      redirect_to article_path(@user.blog_name, @article), notice: 'Article was successfully created.'
+      redirect_to article_path(@user.username, @article), notice: 'Article was successfully created.'
     else
       render :new
     end
   end
 
-  # PATCH/PUT /blog/:blog_name/:id
+  # PATCH/PUT /blog/:username/:id
   def update
 
     if @article.update(article_params)
-      redirect_to article_path(@user.blog_name, @article), notice: 'Article was successfully updated.'
+      redirect_to article_path(@user.username, @article), notice: 'Article was successfully updated.'
     else
       render :edit
     end
   end
 
-  # DELETE /blog/:blog_name/:id
+  # DELETE /blog/:username/:id
   def destroy
     @article.destroy
-    redirect_to articles_url(@user.blog_name), notice: 'Article was successfully destroyed.'
+    redirect_to articles_url(@user.username), notice: 'Article was successfully destroyed.'
   end
 
   private
@@ -63,6 +63,6 @@ class ArticlesController < ApplicationController
   end
 
   def set_user
-    @user = User.find_by_blog_name(params[:blog_name])
+    @user = User.find_by_username(params[:username])
   end
 end

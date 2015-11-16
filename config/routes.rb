@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
 
-  resources :articles, path: "blog/:blog_name/" do
+  resources :articles, path: "blog/:username/" do
     resources :comments, :only => [:create, :destroy] do
       member do
         post :report

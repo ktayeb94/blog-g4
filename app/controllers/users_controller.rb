@@ -20,6 +20,6 @@ class UsersController < ApplicationController
   protected
 
   def user_params
-    params.require(:user).permit(:blog_name)
+    params.require(:user).permit(:username)
   end
 end

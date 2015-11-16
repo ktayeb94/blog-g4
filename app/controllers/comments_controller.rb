@@ -4,28 +4,28 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:report, :destroy]
 
 
-  # POST /blog/:blog_name/:article_id/comments
+  # POST /blog/:username/:article_id/comments
   def create
     @comment = @article.comments.build(comment_params.merge(:user => current_user))
 
     if @comment.save
-      redirect_to article_path(@user.blog_name, @article), notice: 'Comment was successfully created.'
+      redirect_to article_path(@user.username, @article), notice: 'Comment was successfully created.'
     else
       render 'new'
     end
   end
 
-  # POST /blog/:blog_name/:article_id/comments/1/report
+  # POST /blog/:username/:article_id/comments/1/report
   def report
     @comment.report_count += 1
     @comment.save
-    redirect_to article_path(@user.blog_name, @article), notice: 'Thanks for reporting'
+    redirect_to article_path(@user.username, @article), notice: 'Thanks for reporting'
   end
 
-  # DELETE /blog/:blog_name/:article_idcomments/1
+  # DELETE /blog/:username/:article_idcomments/1
   def destroy
     @comment.destroy
-    redirect_to article_path(@user.blog_name, @article), notice: 'Comment was successfully destroyed.'
+    redirect_to article_path(@user.username, @article), notice: 'Comment was successfully destroyed.'
   end
 
   private
@@ -44,6 +44,6 @@ class CommentsController < ApplicationController
   end
 
   def set_user
-    @user = User.find_by_blog_name(params[:blog_name])
+    @user = User.find_by_username(params[:username])
   end
 end
