@@ -1,6 +1,6 @@
-<h1><%= link_to_unless_current(article.title, article_path(article)) %></h1>
+<h1><%= link_to_unless_current(article.title, article_path(article.user.blog_name, article)) %></h1>
 
 <%= simple_format(article.text) %>
-
-<%= link_to 'Edit', edit_article_path(article) %> |
-<%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+Published by <%= link_to article.user.blog_name, articles_path(article.user.blog_name)%>
+<%= link_to 'Edit', edit_article_path(article.user.blog_name, article) %> |
+<%= link_to 'Destroy', article_path(article.user.blog_name, article), method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -1,6 +1,6 @@
-<h1>Listing Articles</h1>
+<h1><%=@user.blog_name%></h1>
 
-<%= link_to 'New Article', new_article_path %>
+<%= link_to 'New Article', new_article_path(@user.blog_name) %>
 
 <% @articles.each do |article| %>
   <div class="article">

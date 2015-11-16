@@ -2,10 +2,12 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!
 
+  # GET  /user/edit
   def edit
     @user = current_user
   end
 
+  # PATCH/PUT /user/
   def update
     @user = current_user
     if @user.update(user_params)

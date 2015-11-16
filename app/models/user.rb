@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   before_validation :init_blog_name
   validates :blog_name, presence: true, uniqueness: true, :format =>{ with: /\A[a-zA-Z]*\z/,}
 
+  has_many :articles, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
   protected
 
   def init_blog_name
