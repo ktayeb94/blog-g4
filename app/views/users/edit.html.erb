@@ -1,4 +1,4 @@
-<h1>Settings</h1>
+<h1><%= t('settings')%></h1>
 <%= form_for(@user, :url => user_path, :method => :put) do |f| %>
   <%= render "shared/validation_errors", :model => @user %>
 
@@ -8,5 +8,5 @@
 
   </div>
 
-  <%= f.submit 'Update settings' %>
+  <%= f.submit t('save') %>
 <% end %>

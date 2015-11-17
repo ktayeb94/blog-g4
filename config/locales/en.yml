@@ -32,5 +32,6 @@ en:
   home: Home
   settings: Settings
   my_blog: My blog (%{username})
+  save: Save
 
 

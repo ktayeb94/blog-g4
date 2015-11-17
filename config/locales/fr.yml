@@ -28,5 +28,6 @@ fr:
   home: Accueil
   settings: Paramètres
   my_blog: "Mon blog (%{username})"
+  save: Enregistrer
 
 
