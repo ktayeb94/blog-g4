@@ -1,8 +1,20 @@
 
 <%= simple_format comment.text %>
 Published by <%= link_to comment.user.username, articles_path(comment.user.username)%>
-<%= link_to 'Destroy', article_comment_path(comment.article.user.username, comment.article, comment), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Report', report_article_comment_path(comment.article.user.username,   comment.article, comment), :method => :post %>
+
+<%if can? :destroy , comment %>
+  <%= link_to 'Destroy',
+              article_comment_path(comment.article.user.username, comment.article, comment),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<%if can? :report , comment %>
+  <%= link_to 'Report',
+              report_article_comment_path(comment.article.user.username,   comment.article, comment),
+              :method => :post %>
+<% end %>
+
 <% if comment.report_count > 0%>
   (Nb of reports : <%= comment.report_count %> )
 <% end %>

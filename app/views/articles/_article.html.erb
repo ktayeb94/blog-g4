@@ -2,5 +2,12 @@
 
 <%= simple_format(article.text) %>
 Published by <%= link_to article.user.username, articles_path(article.user.username)%>
-<%= link_to 'Edit', edit_article_path(article.user.username, article) %> |
+
+<% if can? :edit, article %>
+  <%= link_to 'Edit', edit_article_path(article.user.username, article) %>
+<% end %>
+
+<% if can? :destroy, article %>
 <%= link_to 'Destroy', article_path(article.user.username, article), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
