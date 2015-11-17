@@ -9,6 +9,12 @@
     <%=link_to 'Log in', new_user_session_path%>
     <%=link_to 'Sign up', new_user_registration_path %>
   <% end %>
+
+  <div class="pull-right" >
+    (Current locale is <%= I18n.locale.inspect %>)
+    <%= link_to_if(I18n.locale != :en, "en", change_locale_path("en")) %> |
+    <%= link_to_if(I18n.locale != :fr, "fr", change_locale_path("fr")) %>
+  </div>
 </div>
 
 <div class="featured-blogs">

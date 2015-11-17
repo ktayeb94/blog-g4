@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
 
   resource :user, :only => [:edit, :update]
+
+  get 'change_locale/:locale' => "welcome#change_locale", :as => "change_locale"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
