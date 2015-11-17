@@ -63,6 +63,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-i18n (0.12.1)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -118,6 +119,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails-i18n (4.0.6)
+      i18n (~> 0.7)
+      railties (~> 4.0)
     railties (4.2.4)
       actionpack (= 4.2.4)
       activesupport (= 4.2.4)
@@ -180,10 +184,12 @@ DEPENDENCIES
   cancancan (~> 1.10)
   coffee-rails (~> 4.1.0)
   devise
+  devise-i18n
   jbuilder (~> 2.0)
   jquery-rails
   mailjet
   rails (= 4.2.4)
+  rails-i18n
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

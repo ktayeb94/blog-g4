@@ -51,3 +51,5 @@ end
 gem 'mailjet'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
+gem 'rails-i18n'
+gem 'devise-i18n'
