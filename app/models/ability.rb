@@ -11,8 +11,8 @@ class Ability
       article.user == current_user
     end
 
-    can :report, Comment do
-      !current_user.nil?
+    can :report, Comment do |comment|
+      !current_user.nil? && comment.user != current_user
     end
 
 
