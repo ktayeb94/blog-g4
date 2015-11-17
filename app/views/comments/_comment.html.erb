@@ -1,21 +1,21 @@
 
 <%= simple_format comment.text %>
-Published by <%= link_to comment.user.username, articles_path(comment.user.username)%>
+<%=t 'published_by'%> <%= link_to comment.user.username, articles_path(comment.user.username)%>
 
 <%if can? :destroy , comment %>
-  <%= link_to 'Destroy',
+  <%= link_to t('destroy'),
               article_comment_path(comment.article.user.username, comment.article, comment),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+              data: { confirm: t('are_you_sure') } %>
 <% end %>
 
 <%if can? :report , comment %>
-  <%= link_to 'Report',
+  <%= link_to t('report'),
               report_article_comment_path(comment.article.user.username,   comment.article, comment),
               :method => :post %>
 <% end %>
 
 <% if comment.report_count > 0%>
-  (Nb of reports : <%= comment.report_count %> )
+  (<%=t 'number_of_reports'%>: <%= comment.report_count %> )
 <% end %>
 

@@ -1,13 +1,13 @@
 <h1><%= link_to_unless_current(article.title, article_path(article.user.username, article)) %></h1>
 
 <%= simple_format(article.text) %>
-Published by <%= link_to article.user.username, articles_path(article.user.username)%>
+<%= t 'published_by' %> <%= link_to article.user.username, articles_path(article.user.username)%>
 
 <% if can? :edit, article %>
-  <%= link_to 'Edit', edit_article_path(article.user.username, article) %>
+  <%= link_to t('edit'), edit_article_path(article.user.username, article) %>
 <% end %>
 
 <% if can? :destroy, article %>
-<%= link_to 'Destroy', article_path(article.user.username, article), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to t('destroy'), article_path(article.user.username, article), method: :delete, data: { confirm: t('are_you_sure') } %>
 <% end %>
 

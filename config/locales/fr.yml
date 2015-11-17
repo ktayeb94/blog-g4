@@ -1,2 +1,32 @@
 fr:
   hello: "Bonjour !"
+  activerecord:
+    models:
+      user: Utilisateur
+      article: Article
+      comment: Commentaire
+    attributes:
+      user:
+        email: Couriel
+        password: Mot de passe
+        password_confirmation: Confirmation mot de passe
+        remember_me: Se souvenir de moi
+        username: Nom d'utilisateur
+      article:
+        title: Titre
+        text: Texte
+      comment:
+        text: Texte
+  edit: Modifier
+  destroy: Supprimer
+  report: Signaler
+  are_you_sure: Etes vous certain(e) ?
+  published_by: Publié par
+  number_of_reports: Nombre de signalements
+  new_article: Partagez vos idées
+  featured_blogs: Blogs à l'affiche
+  home: Accueil
+  settings: Paramètres
+  my_blog: "Mon blog (%{username})"
+
+

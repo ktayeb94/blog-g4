@@ -21,3 +21,16 @@
 
 en:
   hello: "Hello world"
+  edit: Edit
+  destroy: Destroy
+  report: Report
+  are_you_sure: Are you sure?
+  published_by: Published by
+  number_of_reports: Number of reports
+  new_article: Share your ideas
+  featured_blogs: Featured blogs
+  home: Home
+  settings: Settings
+  my_blog: My blog (%{username})
+
+

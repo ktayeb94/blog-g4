@@ -1,9 +1,9 @@
 <div class="header">
-  <%= link_to "Home", root_path %>
+  <%= link_to t('home'), root_path %>
 
   <% if current_user %>
-    <%= link_to "Mon Blog (#{current_user.username})", articles_path(current_user.username) %>
-    <%= link_to 'Settings', edit_user_path %>
+    <%= link_to t('my_blog', :username => current_user.username), articles_path(current_user.username) %>
+    <%=link_to t('settings'), edit_user_path %>
     <%=link_to 'Log out', destroy_user_session_path, :method => :delete %>
   <% else %>
     <%=link_to 'Log in', new_user_session_path%>
@@ -11,14 +11,13 @@
   <% end %>
 
   <div class="pull-right" >
-    (Current locale is <%= I18n.locale.inspect %>)
     <%= link_to_if(I18n.locale != :en, "en", change_locale_path("en")) %> |
     <%= link_to_if(I18n.locale != :fr, "fr", change_locale_path("fr")) %>
   </div>
 </div>
 
 <div class="featured-blogs">
-  Featured blogs :
+  <%=t('featured_blogs') %> :
   <% @featured_users.each do |user| %>
       <%= link_to user.username, articles_path(user.username) %>
   <% end %>
