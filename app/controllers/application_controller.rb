@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
     # here we use the session to store the locale
     I18n.locale = session[:locale] || I18n.default_locale
   end
+
+  def i18n_model_name(model)
+    model.try(:class).try(:model_name).try(:human).try(:downcase)
+  end
 end

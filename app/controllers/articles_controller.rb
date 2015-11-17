@@ -33,7 +33,8 @@ class ArticlesController < ApplicationController
     authorize! :create, @article
 
     if @article.save
-      redirect_to article_path(@user.username, @article), notice: 'Article was successfully created.'
+      redirect_to article_path(@user.username, @article),
+                  notice: t('flash_messages.created', :resource_name => i18n_model_name(@article))
     else
       render :new
     end
@@ -43,7 +44,8 @@ class ArticlesController < ApplicationController
   def update
     authorize! :update, @article
     if @article.update(article_params)
-      redirect_to article_path(@user.username, @article), notice: 'Article was successfully updated.'
+      redirect_to article_path(@user.username, @article),
+                  notice: t('flash_messages.updated', :resource_name => i18n_model_name(@article))
     else
       render :edit
     end
@@ -53,7 +55,8 @@ class ArticlesController < ApplicationController
   def destroy
     authorize! :destroy, @article
     @article.destroy
-    redirect_to articles_url(@user.username), notice: 'Article was successfully destroyed.'
+    redirect_to articles_url(@user.username),
+                notice: t('flash_messages.destroyed', :resource_name => i18n_model_name(@article))
   end
 
   private

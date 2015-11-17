@@ -29,5 +29,9 @@ fr:
   settings: Paramètres
   my_blog: "Mon blog (%{username})"
   save: Enregistrer
-
+  flash_messages:
+    created: "Cet (ou cette) %{resource_name} a été créé(e)."
+    updated: "Cet (ou cette) %{resource_name} a été mis(e) à jour."
+    destroyed: "Cet (ou cette) %{resource_name} a été suprimé(e)."
+    reported: "Merci pour votre signalement"
 

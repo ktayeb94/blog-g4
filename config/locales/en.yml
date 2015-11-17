@@ -33,5 +33,10 @@ en:
   settings: Settings
   my_blog: My blog (%{username})
   save: Save
+  flash_messages:
+    created: "This %{resource_name} was successfully created."
+    updated: "This %{resource_name} was successfully updated."
+    destroyed: "This %{resource_name} was successfully destroyed."
+    reported: "Thanks for reporting"
 
 
