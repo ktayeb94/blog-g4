@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   # POST /blog/:username/:article_id/comments
   def create
     @comment = @article.comments.build(comment_params.merge(:user => current_user))
-
+    authorize! :create, @comment
     if @comment.save
       redirect_to article_path(@user.username, @article), notice: 'Comment was successfully created.'
     else
@@ -18,13 +18,15 @@ class CommentsController < ApplicationController
 
   # POST /blog/:username/:article_id/comments/1/report
   def report
+    authorize! :report, @comment
     @comment.report_count += 1
     @comment.save
     redirect_to article_path(@user.username, @article), notice: 'Thanks for reporting'
   end
 
-  # DELETE /blog/:username/:article_idcomments/1
+  # DELETE /blog/:username/:article_id/comments/1
   def destroy
+    authorize! :destroy, @comment
     @comment.destroy
     redirect_to article_path(@user.username, @article), notice: 'Comment was successfully destroyed.'
   end
