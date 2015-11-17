@@ -10,3 +10,10 @@
     <%=link_to 'Sign up', new_user_registration_path %>
   <% end %>
 </div>
+
+<div class="featured-blogs">
+  Featured blogs :
+  <% @featured_users.each do |user| %>
+      <%= link_to user.username, articles_path(user.username) %>
+  <% end %>
+</div>
