@@ -1,0 +1,7 @@
+<p>Bonjour <%= @resource.email %>!</p>
+
+<p>Votre compte a été bloqué à cause d'un nombre excessif de tenatives échouées de connexion.</p>
+
+<p>Pour débloquer votre compte cliquez sur le lien suivant:</p>
+
+<p><%= link_to 'Débloquer mon compte', unlock_url(@resource, unlock_token: @token) %></p>

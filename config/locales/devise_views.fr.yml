@@ -1,0 +1,23 @@
+fr:
+  devise:
+    views:
+      reset_password:
+        password_forgotten: Mot de passe oublié?
+        send_instructions: Envoie moi les instructions pour changer mon mot de passe
+        reset_password: Changer mon mot de passe
+      registration:
+        currently_pending: Merci de valider votre nouvelle adresse email %{email}
+        leave_blank_notice : remplir uniquement si vous souhaitez le changer
+        fill_in_notice: votre mot de passe et nécéssaire pour valider les changements
+        destroy: Supprimer mon compte
+      confirmations:
+        resend_instructions: Renvoyer les instructions pour la confirmation
+      unlock:
+        resend_instructions:  Renvoyer les instructions débloquer mon compte
+      common:
+        log_in: 'Connexion'
+        log_out: 'Déconnexion'
+        sign_up: 'Inscription'
+        miminum_password_length: minimum %{minimum} charactères
+        edit: "Modifier %{resource}"
+        are_you_sure: Etes vous certain(e) ?

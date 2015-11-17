@@ -1,0 +1,23 @@
+en:
+  devise:
+    views:
+      reset_password:
+        password_forgotten: Forgot your password?
+        send_instructions: Send me reset password instructions
+        reset_password: Change my password
+      registration:
+        currently_pending: Currently waiting confirmation for %{email}
+        leave_blank_notice : leave blank if you don't want to change it
+        fill_in_notice: we need your current password to confirm your changes
+        destroy: Cancel my account
+      confirmations:
+        resend_instructions: Resend confirmation instructions
+      unlock:
+        resend_instructions: Resend unlock instructions
+      common:
+        log_in: 'Log in'
+        log_out: 'Log out'
+        sign_up: 'Sign up'
+        miminum_password_length: '%{minimum} characters minimum'
+        edit: "Edit %{resource}"
+        are_you_sure: Are you sure ?
