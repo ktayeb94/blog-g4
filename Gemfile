@@ -50,3 +50,4 @@ end
 
 gem 'mailjet'
 gem 'devise'
+gem 'cancancan', '~> 1.10'
